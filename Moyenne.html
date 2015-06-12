@@ -40,3 +40,40 @@ console.log(res);
 
 	
 </script>
+
+<!-- autre méthode -->
+
+<script>
+
+'use strict'
+
+var a = [1,2,3,4];
+var rest=0;
+function f(acc, item, index, array) {
+	return acc+item / array.length
+	}
+rest=a.reduce(f,0);
+console.log(rest);
+
+	
+</script>
+
+<!--encore une autre méthode -->
+
+<script>
+
+'use strict'
+
+var a = [1,2,3,4];
+function  avg(a){
+	var  sum = a.reduce(function (acc, item){
+		return acc+item
+		},0)
+		return sum/a.length
+	}
+	
+console.log(avg(a));
+
+	
+</script>
+
