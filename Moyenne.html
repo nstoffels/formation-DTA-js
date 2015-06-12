@@ -19,3 +19,24 @@ console.log(c);
 
 	
 </script>
+
+
+<!-- version du prof -->
+
+<script>
+
+'use strict'
+
+var a = [1,2,3,4];
+var res=0;
+function f(acc, item, index, array) {
+	if (index===array.length-1){
+		return (acc+item)/array.length;
+		}
+	return acc+item
+	}
+res=a.reduce(f,0);
+console.log(res);
+
+	
+</script>
