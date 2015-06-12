@@ -1,0 +1,21 @@
+<script>
+
+'use strict'
+
+var array = [1,2,3,4];
+var a=array.length;
+var accu=0;
+var b= array.reduce(function(accu,item,index,array){
+	 return accu+item; /*nouvelle valeur de l'accu */ }
+	, 0 /*valeur initiale de l'accu*/);
+
+console.log(b);
+console.log(a);
+
+var c=0;
+c=b/a;
+
+console.log(c);
+
+	
+</script>
