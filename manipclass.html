@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<!-- angularjs.org -->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+		<script>
+			angular.module("todo", []) /*création d'un module todo*/
+				.controller("todoController", function(){
+					console.log("je suis ton controleur")
+					var todoctrl=this;
+					
+				todoctrl.tasks=["un","deux"]
+					
+				todoctrl.addTask=function(desc){
+						todoctrl.tasks.push(
+							desc)}
+							
+				todoctrl.affichemoi=true;
+				
+				
+				todoctrl.class0fh1="red"
+				todoctrl.changeclass=function(){
+					if(todoctrl.class0fh1==="red"){
+					todoctrl.class0fh1="";
+					} else { todoctrl.class0fh1="red"}
+				}
+					
+					todoctrl.setRed=function(){
+						todoctrl.isRed =! todoctrl.isRed}
+			})		
+				</script>
+		<style>
+			h1.red{color:red;}
+		</style>
+		</head>
+	<body ng-app="todo"> <!-- Créer d'abord le module !!!! -->
+		
+		<header>
+			<h1 ng-controller="{todoController as todoctrl}"
+					ng-class="todoctrl.class0fh1">Exercice de js</h1>
+			<button ng-click="todoctr.changeclass">couleur</button>
+			
+			<h2 ng-class="{'red':todoctrl.isRed}" ng-click="todoctrl.setRed()">en couleur bien sur</h2>
+		</header>
+		
+		<main ng-controller="todoController as todoctrl"> <!--  Signale l'instanciation du controleur -->	
+						
+			<div>
+				<button ng-click="todoctrl.affichemoi =! todoctrl.affichemoi">show/hide</button>
+				<div ng-if="todoctrl.affichemoi" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam explicabo, officia fugiat nulla at provident ipsa labore reiciendis voluptatum. Ut provident sint consequatur illum commodi nihil delectus reprehenderit molestiae.</div>
+			</div>
+		</main>
+			
+	</body>
+</html>
