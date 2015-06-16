@@ -6,15 +6,17 @@
 		<script>
 			angular.module("todo", []) /*création d'un module todo*/
 				.controller("todoController", function(){
-					console.log("je suis le controleur")
+					console.log("je suis ton controleur")
 					var todoctrl=this;
 					
-					todoctrl.tasks=["un","deux"]
+				todoctrl.tasks=["un","deux"]
 					
-					todoctrl.addTask=function(desc){
+				todoctrl.addTask=function(desc){
 						todoctrl.tasks.push(
 							desc)}
-					
+							
+				todoctrl.affichemoi=true;
+				
 			})
 		</script>
 		</head>
@@ -34,6 +36,10 @@
 			<input type="text" ng-model="newtask">
 			<button ng-click="todoctrl.addTask(newtask)">add</button>
 			
+			<div>
+				<button ng-click="todoctrl.affichemoi =! todoctrl.affichemoi">show/hide</button>
+				<div ng-if="todoctrl.affichemoi">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam explicabo, officia fugiat nulla at provident ipsa labore reiciendis voluptatum. Ut provident sint consequatur illum commodi nihil delectus reprehenderit molestiae.</div>
+			</div>
 		</main>
 			
 	</body>
