@@ -29,17 +29,20 @@
 		</header>
 		
 		<main ng-controller="todoController as todoctrl"> <!--  Signale l'instanciation du controleur -->	
+		<input type="text" ng-model="newtask">
+			<button ng-click="todoctrl.addTask(newtask)">add</button>
 			<ul>
 				<li ng-repeat="task in todoctrl.tasks | orderBy"> <!--  orderBy:null:!reverse -->
 					{{task}}
 				</li>
 			</ul>
 			
-			<button ng-click="reverse=!reverse">tri dans l'autre sens</button></br>
-			{{todoctrl.tasks|orderBy:null:reverse}}</br>
 			
-			<input type="text" ng-model="newtask">
-			<button ng-click="todoctrl.addTask(newtask)">add</button>
+			<label>Search: <input ng-model="search"></label>
+			{{todoctrl.tasks|orderBy:null:reverse|filter:search}}</br>
+			<button ng-click="reverse=!reverse">tri dans l'autre sens</button></br>
+			
+			
 			
 			<div>
 				<button ng-click="todoctrl.affichemoi =! todoctrl.affichemoi">show/hide</button>
