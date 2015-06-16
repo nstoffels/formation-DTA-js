@@ -1,0 +1,83 @@
+
+
+<a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array">Le lien MDN bien utile</a>
+
+<script>
+
+'use strict'
+
+var array = [1,2,3,4];
+var a=array.length;
+var accu=0;
+var b= array.reduce(function(accu,item,index,array){
+	 return accu+item; /*nouvelle valeur de l'accu */ }
+	, 0 /*valeur initiale de l'accu*/);
+
+console.log(b);
+console.log(a);
+
+var c=0;
+c=b/a;
+
+console.log(c);
+
+	
+</script>
+
+
+<!-- version du prof -->
+
+<script>
+
+'use strict'
+
+var a = [1,2,3,4];
+var res=0;
+function f(acc, item, index, array) {
+	if (index===array.length-1){
+		return (acc+item)/array.length;
+		}
+	return acc+item
+	}
+res=a.reduce(f,0);
+console.log(res);
+
+	
+</script>
+
+<!-- autre méthode -->
+
+<script>
+
+'use strict'
+
+var a = [1,2,3,4];
+var rest=0;
+function f(acc, item, index, array) {
+	return acc+item / array.length
+	}
+rest=a.reduce(f,0);
+console.log(rest);
+
+	
+</script>
+
+<!--encore une autre méthode -->
+
+<script>
+
+'use strict'
+
+var a = [1,2,3,4];
+function  avg(a){
+	var  sum = a.reduce(function (acc, item){
+		return acc+item
+		},0)
+		return sum/a.length
+	}
+	
+console.log(avg(a));
+
+	
+</script>
+
