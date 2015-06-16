@@ -30,7 +30,7 @@
 		
 		<main ng-controller="todoController as todoctrl"> <!--  Signale l'instanciation du controleur -->	
 			<ul>
-				<li ng-repeat="task in todoctrl.tasks | orderBy">
+				<li ng-repeat="task in todoctrl.tasks | orderBy"> <!--  orderBy:null:!reverse -->
 					{{task}}
 				</li>
 			</ul>
