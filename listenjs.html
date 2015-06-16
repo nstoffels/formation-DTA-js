@@ -17,6 +17,8 @@
 							
 				todoctrl.affichemoi=true;
 				
+				todoctrl.reverse=true;
+				
 			})
 		</script>
 		</head>
@@ -28,10 +30,13 @@
 		
 		<main ng-controller="todoController as todoctrl"> <!--  Signale l'instanciation du controleur -->	
 			<ul>
-				<li ng-repeat="task in todoctrl.tasks">
+				<li ng-repeat="task in todoctrl.tasks | orderBy">
 					{{task}}
 				</li>
 			</ul>
+			
+			<button ng-click="reverse=!reverse">tri dans l'autre sens</button></br>
+			{{todoctrl.tasks|orderBy:null:reverse}}</br>
 			
 			<input type="text" ng-model="newtask">
 			<button ng-click="todoctrl.addTask(newtask)">add</button>
