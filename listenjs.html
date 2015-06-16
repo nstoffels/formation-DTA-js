@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<!-- angularjs.org -->
+		<meta charset="utf-8">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
 		<script>
@@ -20,6 +21,17 @@
 				todoctrl.reverse=true;
 				
 			})
+			
+			/*.filter("bang",function(){
+				return function(input){
+					return input + ' !'} // version simple
+			})*/
+			.filter("bang",function(){
+				return function(input, nb){
+					return input +''+ '!'.repeat(nb)//es2015
+					}
+			})
+			
 		</script>
 		</head>
 	<body ng-app="todo"> <!-- Créer d'abord le module !!!! -->
@@ -29,10 +41,15 @@
 		</header>
 		
 		<main ng-controller="todoController as todoctrl"> <!--  Signale l'instanciation du controleur -->	
+		
+		<label>nombre de point d'exclamation: <input type="number" ng-model="nombre"></label>
+		{{'Bonjour'|bang:nombre}}
+		</br>
+		</br>
 		<input type="text" ng-model="newtask">
-			<button ng-click="todoctrl.addTask(newtask)">add</button>
+			<button ng-click="todoctrl.addTask(newtask)">ajouter quelque chose, attention à écrire quelque chose</button>
 			<ul>
-				<li ng-repeat="task in todoctrl.tasks | orderBy"> <!--  orderBy:null:!reverse -->
+				<li ng-repeat="task in todoctrl.tasks | orderBy track by $index"> <!--  orderBy:null:!reverse -->
 					{{task}}
 				</li>
 			</ul>
