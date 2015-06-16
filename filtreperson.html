@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<!-- angularjs.org -->
+		<meta charset="utf-8">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+		<script>
+
+			
+			angular.module("app", [])
+				.controller("ctrl", function(){
+					this.user1={name:"nicolas", email:"a@ici.fr"}
+					this.user2={email:"a@ici.fr"}
+				})
+			
+			.filter("username",function(){
+				return function(input){
+					if(input) return input.name || input.email || "John Doe"
+					}
+				})
+			
+			
+		</script>
+	</head>
+
+	<body ng-app="app"> <!-- Créer d'abord le module !!!! -->
+			
+		<header>
+			<h1>Exercice de js</h1>
+		</header>
+			
+		<main ng-controller="ctrl"> <!--  Signale l'instanciation du controleur -->	
+
+			{{ctrl.user1 | username}} === thomas</br>
+			{{ctrl.user2 | username}} === a@ici.fr</br>
+			{{ctrl.user3 | username}} === john doe</br>
+
+		</main>
+				
+	</body>
+</html>
