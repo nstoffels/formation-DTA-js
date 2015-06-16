@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<!-- angularjs.org -->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+		<script>
+			angular.module("todo", []) /*création d'un module todo*/
+				.controller("todoController", function(){
+					console.log("je suis le controleur")
+					var todoctrl=this;
+					
+					todoctrl.tasks=["un","deux"]
+					
+					todoctrl.addTask=function(desc){
+						todoctrl.tasks.push(
+							desc)}
+					
+			})
+		</script>
+		</head>
+	<body ng-app="todo"> <!-- Créer d'abord le module !!!! -->
+		
+		<header>
+			<h1>Exercice de js</h1>
+		</header>
+		
+		<main ng-controller="todoController as todoctrl"> <!--  Signale l'instanciation du controleur -->	
+			<ul>
+				<li ng-repeat="task in todoctrl.tasks">
+					{{task}}
+				</li>
+			</ul>
+			
+			<input type="text" ng-model="newtask">
+			<button ng-click="todoctrl.addTask(newtask)">add</button>
+			
+		</main>
+			
+	</body>
+</html>
