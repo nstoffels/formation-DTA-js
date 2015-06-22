@@ -50,3 +50,32 @@ module.exports=function(grunt){
 	}) ;
 	grunt.loadNpmTasks('grunt-contrib-copy');
 }//copie colle un fichier ailleurs
+module.exports=function(grunt){
+	grunt.initConfig({
+		copy:{
+			main:{
+				files:{'tmp/':['public/**/*.js','public/**/*.css','public/**/*.html']},
+				expand:true
+			}
+		}
+	}) ;
+	grunt.loadNpmTasks('grunt-contrib-copy');
+}//tentative de faire comme plus haut, mais en moins bien ^^
+
+// Project configuration.
+module.exports=function(grunt){
+grunt.initConfig({
+  connect: {
+    dev: {
+      options: {
+        port: 8080,
+        base: 'public',
+		open: true,
+		keepalive:true
+      }
+    }
+  }
+});
+grunt.loadNpmTasks('grunt-contrib-connect');
+}//ouvrir son petit serveur
+
