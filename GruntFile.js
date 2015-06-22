@@ -1,12 +1,12 @@
 module.exports=function(grunt){
 	grunt.initConfig({
-		hello:{
-			configNantes:'Nantes',
-			configRennes:'Rennes'
+		copy:{
+			main:{
+				src:['public/**/*.js','public/**/*.css','public/**/*.html'],
+				dest:'tmp/',
+				expand:true
+			}
 		}
-	});
-	
-	grunt.registerMultiTask('hello','Hello',function(){
-		console.log('Hello grunt, depuis %s ! avec la config %s ', this.data, this.target);
-	});
+	}) ;
+	grunt.loadNpmTasks('grunt-contrib-copy');
 }

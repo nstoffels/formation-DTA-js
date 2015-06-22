@@ -33,5 +33,20 @@ module.exports=function(grunt){
 	grunt.registerMultiTask('hello','Hello',function(){
 		console.log('Hello grunt, depuis %s ! avec la config %s ', this.data, this.target);
 	});
+	grunt.registerTask('nantes','hello:configNantes'); //permet d'utiliser grunt nantes directement plutôt que grunt hello:configNantes
+
 }
 //à lancer d'abord avec grunt hello, puis avec grunt hello:configNantes
+
+module.exports=function(grunt){
+	grunt.initConfig({
+		copy:{
+			main:{
+				src:['public/**/*.js','public/**/*.css','public/**/*.html'],
+				dest:'tmp/',
+				expand:true
+			}
+		}
+	}) ;
+	grunt.loadNpmTasks('grunt-contrib-copy');
+}//copie colle un fichier ailleurs
