@@ -79,3 +79,33 @@ grunt.initConfig({
 grunt.loadNpmTasks('grunt-contrib-connect');
 }//ouvrir son petit serveur
 
+
+// Project configuration.
+module.exports=function(grunt){
+grunt.initConfig({
+	connect: {
+    dev: {
+      options: {
+        port: 3000,
+        //base: 'AngularJS-TP',
+		open: true,
+		livereload:true,
+		hostname:'localhost'
+      }
+    }
+  },
+  watch: {
+  dev: {
+    files: [ '*.html', 'config/*.html' ],
+    options: {
+      livereload: true
+    }
+  }
+}
+});
+grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.loadNpmTasks('grunt-contrib-connect');
+
+grunt.registerTask('server',['connect','watch']);
+}//changement en direct de sauvegarde de index.
+
