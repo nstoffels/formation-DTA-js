@@ -1,0 +1,29 @@
+{
+  "name": "AngularJS-TP",
+  "version": "1.0.0",
+  "description": "test JS",
+  "main": "principal.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "0.2",
+    "nano": "3.3.x",
+    "req": "^0.1.4",
+    "request": "*"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "req": "^0.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nstoffels/formation-DTA-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nstoffels/formation-DTA-js/issues"
+  },
+  "homepage": "https://github.com/nstoffels/formation-DTA-js"
+}
