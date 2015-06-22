@@ -6,7 +6,7 @@ module.exports=function(grunt){
 		},
 		copy:{
 			public:{
-				src:['bower_components/**/angular.min.js','bower_components/**/bootstrap.min.css','bower_components/**/angular-route.min.js'],
+				src:['bower_components/**/angular.min.js','bower_components/**/bootstrap.min.css','bower_components/**/angular-route.min.js','bower_components/**/jquery.min.map'],
 				dest:'tmp/lib',
 				expand:true,
 				flatten : true
@@ -41,6 +41,7 @@ module.exports=function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	
 	grunt.registerTask('bower',['copy','connect','watch','clean']);
 }
